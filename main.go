@@ -1,10 +1,11 @@
 package main
 
-import(
+import (
 	"fmt"
 	"net/http"
-	"github.com/gorilla/mux"
 	"remainder_app/controller"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
