@@ -1,0 +1,28 @@
+INFO:2023/01/02 15:31:38 main.go:21: Starting
+INFO:2023/01/02 15:32:52 main.go:21: Starting
+INFO:2023/01/02 15:32:59 main.go:21: Starting
+INFO:2023/01/02 15:33:32 main.go:21: Starting
+INFO:2023/01/02 16:00:47 main.go:21: Starting
+INFO:2023/01/02 16:01:35 controller.go:25: Starting
+ERROR:2023/01/02 16:01:35 controller.go:27: event Of The Past
+INFO:2023/01/02 16:03:04 controller.go:25: Starting
+ERROR:2023/01/02 16:03:04 controller.go:27: event Of The Past
+INFO:2023/01/02 16:08:57 main.go:21: Starting
+INFO:2023/01/02 16:09:05 controller.go:25: Starting
+ERROR:2023/01/02 16:09:05 controller.go:27: event Of The Past
+INFO:2023/01/02 16:09:39 main.go:21: Starting
+INFO:2023/01/02 16:19:45 main.go:21: Starting
+INFO:2023/01/02 16:19:50 controller.go:25: Starting
+ERROR:2023/01/02 16:19:50 controller.go:27: event Of The Past
+INFO:2023/01/02 16:21:39 main.go:21: Starting
+INFO:2023/01/02 16:21:41 controller.go:25: Starting
+ERROR:2023/01/02 16:21:41 controller.go:27: event Of The Past
+INFO:2023/01/02 17:36:30 main.go:21: Starting
+ERROR:2023/01/02 17:36:42 controller.go:26: event Of The Past
+ERROR:2023/01/02 17:37:01 controller.go:26: no name Specified
+ERROR:2023/01/02 17:37:26 controller.go:26: created By Not Specified
+INFO:2023/01/02 17:38:06 controller.go:31: &{ObjectID("63b2c926f0b9d0595ad166b2")}
+INFO:2023/01/02 17:40:56 controller.go:31: &{ObjectID("63b2c9d0f0b9d0595ad166b3")}
+INFO:2023/01/02 17:41:06 main.go:21: Starting
+INFO:2023/01/02 17:42:25 main.go:21: Starting
+INFO:2023/01/02 17:42:35 controller.go:31: Inserted object with Id:6
