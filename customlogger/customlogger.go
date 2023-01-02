@@ -34,7 +34,7 @@ func GetInstance() *loggers {
 }
 
 func createLogger(fname string) *loggers {
-    file,err :=os.OpenFile("file.log",os.O_APPEND|os.O_CREATE|os.O_WRONLY,0666)
+    file,err :=os.OpenFile(fname,os.O_APPEND|os.O_CREATE|os.O_WRONLY,0666)
     if(err!=nil){
 		log.Fatal(err)
 	}
