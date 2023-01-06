@@ -1,0 +1,66 @@
+INFO:2023/01/02 15:31:38 main.go:21: Starting
+INFO:2023/01/02 15:32:52 main.go:21: Starting
+INFO:2023/01/02 15:32:59 main.go:21: Starting
+INFO:2023/01/02 15:33:32 main.go:21: Starting
+INFO:2023/01/02 16:00:47 main.go:21: Starting
+INFO:2023/01/02 16:01:35 controller.go:25: Starting
+ERROR:2023/01/02 16:01:35 controller.go:27: event Of The Past
+INFO:2023/01/02 16:03:04 controller.go:25: Starting
+ERROR:2023/01/02 16:03:04 controller.go:27: event Of The Past
+INFO:2023/01/02 16:08:57 main.go:21: Starting
+INFO:2023/01/02 16:09:05 controller.go:25: Starting
+ERROR:2023/01/02 16:09:05 controller.go:27: event Of The Past
+INFO:2023/01/02 16:09:39 main.go:21: Starting
+INFO:2023/01/02 16:19:45 main.go:21: Starting
+INFO:2023/01/02 16:19:50 controller.go:25: Starting
+ERROR:2023/01/02 16:19:50 controller.go:27: event Of The Past
+INFO:2023/01/02 16:21:39 main.go:21: Starting
+INFO:2023/01/02 16:21:41 controller.go:25: Starting
+ERROR:2023/01/02 16:21:41 controller.go:27: event Of The Past
+INFO:2023/01/02 17:36:30 main.go:21: Starting
+ERROR:2023/01/02 17:36:42 controller.go:26: event Of The Past
+ERROR:2023/01/02 17:37:01 controller.go:26: no name Specified
+ERROR:2023/01/02 17:37:26 controller.go:26: created By Not Specified
+INFO:2023/01/02 17:41:06 main.go:21: Starting
+INFO:2023/01/02 17:42:25 main.go:21: Starting
+INFO:2023/01/02 17:42:35 controller.go:31: Inserted object with Id:6
+INFO:2023/01/03 12:21:43 main.go:19: Starting
+INFO:2023/01/05 11:51:47 main.go:35: Starting
+INFO:2023/01/05 11:54:28 main.go:35: Starting
+INFO:2023/01/05 12:08:49 main.go:35: Starting
+INFO:2023/01/05 12:16:40 main.go:36: Starting
+INFO:2023/01/05 12:17:10 main.go:36: Starting
+INFO:2023/01/05 15:43:49 main.go:22: Starting
+INFO:2023/01/05 15:50:46 main.go:22: Starting
+INFO:2023/01/06 15:42:38 main.go:28: Starting
+INFO:2023/01/06 15:43:02 main.go:28: Starting
+INFO:2023/01/06 15:45:31 main.go:28: Starting
+INFO:2023/01/06 15:46:54 main.go:28: Starting
+INFO:2023/01/06 15:48:51 main.go:28: Starting
+INFO:2023/01/06 15:51:32 main.go:28: Starting
+INFO:2023/01/06 15:52:41 main.go:28: Starting
+INFO:2023/01/06 15:53:25 main.go:29: Starting
+INFO:2023/01/06 15:57:44 main.go:29: Starting
+INFO:2023/01/06 16:19:31 main.go:22: Starting
+INFO:2023/01/06 16:20:00 main.go:22: Starting
+INFO:2023/01/06 16:21:36 main.go:22: Starting
+INFO:2023/01/06 16:27:24 main.go:24: Starting
+INFO:2023/01/06 16:28:45 main.go:24: Starting
+INFO:2023/01/06 16:32:38 main.go:24: Starting
+INFO:2023/01/06 16:33:41 main.go:24: Starting
+INFO:2023/01/06 16:35:34 main.go:24: Starting
+INFO:2023/01/06 16:36:21 main.go:24: Starting
+INFO:2023/01/06 16:37:05 main.go:24: Starting
+INFO:2023/01/06 16:37:22 main.go:24: Starting
+INFO:2023/01/06 16:38:05 main.go:24: Starting
+INFO:2023/01/06 16:40:40 main.go:24: Starting
+INFO:2023/01/06 16:41:12 main.go:24: Starting
+INFO:2023/01/06 16:41:36 main.go:24: Starting
+INFO:2023/01/06 16:43:20 main.go:24: Starting
+INFO:2023/01/06 17:28:42 main.go:24: Starting
+INFO:2023/01/06 17:31:03 main.go:24: Starting
+INFO:2023/01/06 17:31:13 main.go:24: Starting
+INFO:2023/01/06 17:31:33 main.go:24: Starting
+INFO:2023/01/06 17:36:59 main.go:24: Starting
+INFO:2023/01/06 17:43:11 main.go:24: Starting
+INFO:2023/01/06 17:44:45 main.go:24: Starting
