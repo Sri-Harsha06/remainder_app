@@ -1,15 +1,17 @@
 package controller
 
-import(
-	"remainder_app/services"
+import (
+	"context"
 	"encoding/json"
 	"net/http"
+	cd "remainder_App/client_discovery"
+	"remainder_app/customlogger"
+	"remainder_app/functions"
+	"remainder_app/model"
+	"remainder_app/services"
+
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/mongo"
-	"remainder_app/model"
-	"remainder_app/functions"
-	"context"
-	"remainder_app/customlogger"
 )
 
 var client *mongo.Client
@@ -18,17 +20,18 @@ var event model.Event
 func AddEvent(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
 	_ = json.NewDecoder(request.Body).Decode(&event)
-	client=services.GetInstance()
+	client = services.GetInstance()
 	collection := client.Database("events").Collection("event")
 	result, err := functions.InsertData(collection, event)
 	logger := customlogger.GetInstance()
-	if err!=nil {
+	if err != nil {
 		logger.ErrorLogger.Println(err)
 		response.WriteHeader(400)
-		response.Write([]byte(`{ "message": "` + err.Error()+ `" }`))
+		response.Write([]byte(`{ "message": "` + err.Error() + `" }`))
 		return
-	}else{
-		logger.InfoLogger.Println("Inserted object with Id:"+event.Id)
+	} else {
+		logger.InfoLogger.Println("Inserted object with Id:" + event.Id)
+		cd.Client_discovery()
 		json.NewEncoder(response).Encode(result)
 	}
 }
@@ -37,7 +40,7 @@ func ReadEventById(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
 	params := mux.Vars(request)
 	id := params["id"]
-	client=services.GetInstance()
+	client = services.GetInstance()
 	collection := client.Database("events").Collection("event")
 	logger := customlogger.GetInstance()
 	err := functions.FindDataById(collection, model.Event{Id: id}).Decode(&event)
@@ -48,14 +51,14 @@ func ReadEventById(response http.ResponseWriter, request *http.Request) {
 		logger.ErrorLogger.Println(err.Error())
 		return
 	}
-	logger.InfoLogger.Println("Fetched event by ID:"+id)
+	logger.InfoLogger.Println("Fetched event by ID:" + id)
 	json.NewEncoder(response).Encode(event)
 }
 
 func GetEvents(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
 	var events []model.Event
-	client=services.GetInstance()
+	client = services.GetInstance()
 	collection := client.Database("events").Collection("event")
 	logger := customlogger.GetInstance()
 	// cursor, err := collection.Find(ctx, bson.M{})
@@ -86,7 +89,7 @@ func ReadEventByName(response http.ResponseWriter, request *http.Request) {
 	var events []model.Event
 	params := mux.Vars(request)
 	name := params["name"]
-	client=services.GetInstance()
+	client = services.GetInstance()
 	logger := customlogger.GetInstance()
 	collection := client.Database("events").Collection("event")
 	cursor, err := functions.GetData(collection, model.Event{Name: name})
@@ -107,7 +110,7 @@ func ReadEventByName(response http.ResponseWriter, request *http.Request) {
 		logger.ErrorLogger.Println(err.Error())
 		return
 	}
-	logger.InfoLogger.Println("Fetched event by name:"+name)
+	logger.InfoLogger.Println("Fetched event by name:" + name)
 	json.NewEncoder(response).Encode(events)
 }
 
@@ -116,7 +119,7 @@ func ReadEventByEvent(response http.ResponseWriter, request *http.Request) {
 	var events []model.Event
 	params := mux.Vars(request)
 	event := params["event"]
-	client=services.GetInstance()
+	client = services.GetInstance()
 	logger := customlogger.GetInstance()
 	collection := client.Database("events").Collection("event")
 	cursor, err := functions.GetData(collection, model.Event{Event: event})
@@ -138,7 +141,7 @@ func ReadEventByEvent(response http.ResponseWriter, request *http.Request) {
 		logger.ErrorLogger.Println(err.Error())
 		return
 	}
-	logger.InfoLogger.Println("Fetched event by Event:"+event)
+	logger.InfoLogger.Println("Fetched event by Event:" + event)
 	json.NewEncoder(response).Encode(events)
 }
 
@@ -147,7 +150,7 @@ func ReadEventByDate(response http.ResponseWriter, request *http.Request) {
 	var events []model.Event
 	params := mux.Vars(request)
 	date := params["date"]
-	client=services.GetInstance()
+	client = services.GetInstance()
 	logger := customlogger.GetInstance()
 	collection := client.Database("events").Collection("event")
 	cursor, err := functions.GetData(collection, model.Event{Date: date})
@@ -168,13 +171,13 @@ func ReadEventByDate(response http.ResponseWriter, request *http.Request) {
 		logger.ErrorLogger.Println(err.Error())
 		return
 	}
-	logger.InfoLogger.Println("Fetched event by Date:"+date)
+	logger.InfoLogger.Println("Fetched event by Date:" + date)
 	json.NewEncoder(response).Encode(events)
 }
 
 func UpdateEvent(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
-	client=services.GetInstance()
+	client = services.GetInstance()
 	logger := customlogger.GetInstance()
 	collection := client.Database("events").Collection("event")
 	_ = json.NewDecoder(request.Body).Decode(&event)
@@ -183,7 +186,7 @@ func UpdateEvent(response http.ResponseWriter, request *http.Request) {
 		logger.ErrorLogger.Println(err.Error())
 		panic(err)
 	}
-	logger.InfoLogger.Println("Updated Event With Id:"+event.Id)
+	logger.InfoLogger.Println("Updated Event With Id:" + event.Id)
 	json.NewEncoder(response).Encode(result)
 }
 
@@ -191,7 +194,7 @@ func DeleteEvent(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
 	params := mux.Vars(request)
 	id := params["id"]
-	client=services.GetInstance()
+	client = services.GetInstance()
 	logger := customlogger.GetInstance()
 	collection := client.Database("events").Collection("event")
 	result, err := functions.DeleteData(collection, model.Event{Id: id})
@@ -199,6 +202,6 @@ func DeleteEvent(response http.ResponseWriter, request *http.Request) {
 		logger.ErrorLogger.Println(err.Error())
 		panic(err)
 	}
-	logger.InfoLogger.Println("Deleted Event With Id:"+id)
+	logger.InfoLogger.Println("Deleted Event With Id:" + id)
 	json.NewEncoder(response).Encode(result)
 }
